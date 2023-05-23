@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <input type="text" placeholder="enter your name" />
+      <button class="add">Add name to array</button>
+      <button class="print">Print Names</button>
+    </div>
+
+    <script>
+      let a = document.querySelector("input");
+      let b = document.querySelector(".add");
+      let c = document.querySelector(".print");
+      let d = [];
+
+      b.addEventListener("click", () => {
+        d.push(a.value);
+        a.value = "";
+        console.log(d);
+      });
+      c.addEventListener("click", () => {
+        let para = document.createElement("p");
+        para.innerHTML = d.join(" , ");
+        document.querySelector("#wrapper").append(para);
+      });
+
+      //   a.addEventListener("blur", () => {
+      //     let b = document.createElement("p");
+      //     b.innerHTML = a.value.split("").reverse("").join("");
+      //     document.querySelector("#wrapper").append(b);
+      //   });
+    </script>
+  </body>
+</html>
